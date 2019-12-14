@@ -1,13 +1,18 @@
 % modified from: https://gits-15.sys.kth.se/giampi/kthlatex
 
 \ProvidesPackage{beamerthemeKTH}[2016/06/21]
+
 \mode<presentation>
+
+\usepackage[ddmmyyyy]{datetime}
+% \usepackage[default]{cantarell}
 
 \RequirePackage{tikz}
 \definecolor{kthcolor}{RGB}{25,84,166}
 
 \setbeamertemplate{navigation symbols}{}
-\setbeamersize{text margin left=4mm,text margin right=4mm}
+\setbeamersize{text margin left=2cm,text margin right=4mm}
+\setbeamerfont{footline}{size=\fontsize{4}{11}\selectfont}
 
 \pgfdeclareimage[height=12mm]{kthlogo}{kth/KTH-logo}
 
@@ -34,20 +39,46 @@
 
 
 \newcommand{\kthsingleline}{%
-\begin{tikzpicture}[thick,color=kthcolor,x=2mm,y=2mm]
-  \draw (0,0) -- (77,0);
-\end{tikzpicture}}
-
+  \begin{tikzpicture}[thin,color=kthcolor,x=1cm]
+    \draw (0,0);
+    \draw (0.45,0) -- (15.55,0);
+  \end{tikzpicture}
+}
 
 \newcommand{\startpage}{%
 \usebackgroundtemplate{\vbox{\null\vspace{4mm}
   \hspace{4mm}\pgfuseimage{kthlogo}\par
   \vspace{43mm}\hbox{\hspace{3mm}\kthlines}%
-  \vspace{2mm}\hbox{\hspace{3mm}\kthsingleline}}}}
+  \hbox{\hspace{3mm}\kthsingleline}}}}
 
 \newcommand{\normalpage}{%
-\usebackgroundtemplate{\vbox{\null
-  \vspace{\paperheight}\vspace{-3mm}\hbox{\hspace{3mm}\kthsingleline}}}}
+  \usebackgroundtemplate{
+    \vbox{
+      \null
+      \vspace{4mm}
+      \hspace{4mm}\pgfuseimage{kthlogo}\par
+      \vspace{6.96cm}
+      \kthsingleline
+    }
+  }
+}
+
+% \addtobeamertemplate{navigation symbols}{}{%
+%     \usebeamerfont{footline}%
+%     \usebeamercolor[fg]{footline}%
+%     \hspace{5em}%
+%     \vspace{-0.2em}%
+%     \insertframenumber/\inserttotalframenumber
+% }
+
+\setbeamertemplate{footline}
+{
+  \begin{tikzpicture}[]
+    \draw (0,0);
+    \draw (0.45,0.21)  node[color=gray, align=left, right=0,inner sep=0,outer sep=0,text height=1.5ex, text depth=0.25ex] {\insertshortdate $\quad$ \insertshorttitle $\quad$ \insertshortauthor};
+    \draw (15.55,0.21)  node[color=gray, align=right, left=0,inner sep=0,outer sep=0,text height=1.5ex, text depth=0.25ex] {\insertframenumber};
+  \end{tikzpicture}
+}
 
 % TODOs 
 % other fonts for titles
