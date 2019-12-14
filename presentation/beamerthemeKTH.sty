@@ -64,9 +64,25 @@
   }
 }
 
+% frametitle
+% \setbeamertemplate{frametitle}{
+%   \strut\insertframetitle
+%   \strut\insertframesubtitle
+% }
+
+% \setbeamertemplate{framesubtitle}{
+%   \strut\insertframetitle
+%   \strut\insertframesubtitle
+% }
+
 % simple dot for itemize
 \setbeamertemplate{itemize items}{\raisebox{0.2em}{\scalebox{1}{$\centerdot$}}}
 
+% no indent for itemize
+\settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
+\addtolength{\leftmargini}{\labelsep}
+
+% footer
 \setbeamertemplate{footline}
 {
   \begin{tikzpicture}[]

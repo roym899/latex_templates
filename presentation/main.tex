@@ -1,6 +1,7 @@
 \documentclass[aspectratio=169]{beamer}
 
 \usetheme{KTH}
+% \usetheme{Darmstadt}
 
 % remove this if using XeLaTeX or LuaLaTeX
 \usepackage[utf8]{inputenc}
@@ -27,27 +28,17 @@
   \titlepage
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \begin{frame}
+% \maketitle
 
-%   \vspace{0.02\textheight}
-  
-%   \begin{Large}
-%     Beamer Template for KTH Presentations
-%   \end{Large}
+\section{test}
 
-%   \vspace{0.1\textheight}
-
-%   \begin{small}
-%     \textit{Author name $<$\href{mailto:author@mail.com}{author@mail.com}$>$}
-%   \end{small}
-% \end{frame}
-
+\subsection{subtest}
 
 \normalpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
   \frametitle{Making a KTH Presentation}
+  % \framesubtitle{dasd}
 
   \begin{block}{Steps needed}
     \begin{itemize}
@@ -64,5 +55,24 @@
   \end{block}
 
 \end{frame}
+
+\begin{frame}
+  \frametitle{Enumeration}
+  \framesubtitle{Enumeration subtitle}
+  asidj asdjoiadsoi j
+  \begin{itemize}
+    \item Copy the following files:
+    \begin{itemize}
+    \item \texttt{examplepresentation.tex} (this file)
+    \item \texttt{beamerthemeKTH.sty}
+    \item \texttt{kthgraphics} (with all its contents)
+    \end{itemize}
+    \item Replace the contents in \texttt{examplepresentation.tex} with your own
+    \item Run \texttt{pdflatex} (or \texttt{xelatex} or \texttt{lualatex}) a couple of times
+    \item Present your slides using a PDF-viewer
+  \end{itemize}
+
+\end{frame}
+
 
 \end{document}
