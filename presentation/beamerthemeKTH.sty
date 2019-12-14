@@ -5,6 +5,7 @@
 \mode<presentation>
 
 \usepackage[ddmmyyyy]{datetime}
+\usepackage{}
 % \usepackage[default]{cantarell}
 
 \RequirePackage{tikz}
@@ -20,7 +21,7 @@
 \setbeamercolor{palette secondary}{bg=kthcolor,fg=white}
 \setbeamercolor{palette tertiary}{bg=kthcolor,fg=white}
 \setbeamercolor{palette quaternary}{bg=kthcolor,fg=white}
-\setbeamercolor{structure}{fg=kthcolor} % itemize, enumerate, etc
+\setbeamercolor{structure}{fg=black} % itemize, enumerate, etc
 \setbeamercolor{section in toc}{fg=kthcolor} % TOC sections
 
 \newcommand{\kthlines}{%
@@ -63,13 +64,8 @@
   }
 }
 
-% \addtobeamertemplate{navigation symbols}{}{%
-%     \usebeamerfont{footline}%
-%     \usebeamercolor[fg]{footline}%
-%     \hspace{5em}%
-%     \vspace{-0.2em}%
-%     \insertframenumber/\inserttotalframenumber
-% }
+% simple dot for itemize
+\setbeamertemplate{itemize items}{\raisebox{0.2em}{\scalebox{1}{$\centerdot$}}}
 
 \setbeamertemplate{footline}
 {
