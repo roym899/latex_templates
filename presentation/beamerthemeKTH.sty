@@ -12,10 +12,10 @@
 \definecolor{kthcolor}{RGB}{25,84,166}
 
 \setbeamertemplate{navigation symbols}{}
-\setbeamersize{text margin left=2cm,text margin right=4mm}
+\setbeamersize{text margin left=1.93cm,text margin right=4mm}
 \setbeamerfont{footline}{size=\fontsize{4}{11}\selectfont}
 
-\pgfdeclareimage[height=12mm]{kthlogo}{kth/KTH-logo}
+\pgfdeclareimage[width=12mm]{kthlogo}{kth/KTH-logo}
 
 \setbeamercolor{palette primary}{bg=kthcolor,fg=white}
 \setbeamercolor{palette secondary}{bg=kthcolor,fg=white}
@@ -65,10 +65,16 @@
 }
 
 % frametitle
-% \setbeamertemplate{frametitle}{
-%   \strut\insertframetitle
-%   \strut\insertframesubtitle
-% }
+\setbeamertemplate{frametitle}{
+  \begin{tikzpicture}[thin,color=kthcolor,x=1cm]
+    \draw (0,0);
+    % \draw (0.0,0) -- (15.55,0);
+    \draw (0,-0.9) node[align=left, right=0,inner sep=0,outer sep=0, black,font=\bfseries] {\LARGE\strut\insertframetitle};
+    \draw (0,-1.46) node[align=left, right=0,inner sep=0,outer sep=0, black] {\normalsize\hspace{0.13ex}\strut\insertframesubtitle}; 
+    % 0.13ex is to slightly improve adjustment (not possible automatically, since glyph size is not known to LaTeX)
+  \end{tikzpicture}
+}
+
 
 % \setbeamertemplate{framesubtitle}{
 %   \strut\insertframetitle
