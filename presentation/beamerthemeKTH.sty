@@ -12,8 +12,9 @@
 \definecolor{kthcolor}{RGB}{25,84,166}
 
 \setbeamertemplate{navigation symbols}{}
-\setbeamersize{text margin left=1.93cm,text margin right=4mm}
+\setbeamersize{text margin left=1cm,text margin right=1cm}
 \setbeamerfont{footline}{size=\fontsize{4}{11}\selectfont}
+
 
 \pgfdeclareimage[width=12mm]{kthlogo}{kth/KTH-logo}
 
@@ -68,8 +69,8 @@
   \begin{tikzpicture}[thin,color=kthcolor,x=1cm]
     \draw (0,0);
     % \draw (0.0,0) -- (15.55,0);
-    \draw (0,-0.9) node[align=left, right=0,inner sep=0,outer sep=0, black,font=\bfseries] {\LARGE\strut\insertframetitle};
-    \draw (0,-1.46) node[align=left, right=0,inner sep=0,outer sep=0, black] {\normalsize\hspace{0.13ex}\strut\insertframesubtitle}; 
+    \draw (0.93,-0.9) node[align=left, right=0,inner sep=0,outer sep=0, black,font=\bfseries] {\LARGE\strut\insertframetitle};
+    \draw (0.93,-1.46) node[align=left, right=0,inner sep=0,outer sep=0, black] {\normalsize\hspace{0.13ex}\strut\insertframesubtitle}; 
     % 0.13ex is to slightly improve adjustment (not possible automatically, since glyph size is not known to LaTeX)
   \end{tikzpicture}
 }
@@ -78,10 +79,10 @@
   \begin{tikzpicture}[thin,overlay,color=kthcolor,x=1cm]
     \draw (0,0);
     % \draw (0.0,0) -- (15.55,0);
-    \draw (-1.0,0) node[align=left, right=0,inner sep=0,outer sep=0, black,font=\bfseries] {\huge\strut\inserttitle};
-    \draw (-1.0,-0.7) node[align=left, right=0,inner sep=0,outer sep=0, black] {\Large\hspace{0.13ex}\strut\insertsubtitle};
-    \draw (-1.0,-2) node[align=left, right=0,inner sep=0,outer sep=0, black] {\normalsize\hspace{0.25ex}\strut\insertauthor};
-    \draw (-1.0,-2.4) node[align=left, right=0,inner sep=0,outer sep=0, black] {\small\hspace{0.34ex}\strut\insertinstitute};
+    \draw (0,0) node[align=left, right=0,inner sep=0,outer sep=0, black,font=\bfseries] {\huge\strut\inserttitle};
+    \draw (0,-0.7) node[align=left, right=0,inner sep=0,outer sep=0, black] {\Large\hspace{0.13ex}\strut\insertsubtitle};
+    \draw (0,-2) node[align=left, right=0,inner sep=0,outer sep=0, black] {\normalsize\hspace{0.25ex}\strut\insertauthor};
+    \draw (0,-2.4) node[align=left, right=0,inner sep=0,outer sep=0, black] {\small\hspace{0.34ex}\strut\insertinstitute};
     % 0.13ex is to slightly improve adjustment (not possible automatically, since glyph size is not known to LaTeX)
   \end{tikzpicture}
 
@@ -99,6 +100,8 @@
 % \end{tikzpicture}
 }
 
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+
 % simple dot for itemize
 \setbeamertemplate{itemize items}{\raisebox{0.2em}{\scalebox{1}{$\centerdot$}}}
 
@@ -106,14 +109,22 @@
 \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
 \addtolength{\leftmargini}{1.8\labelsep}
 
+
 % footer
 \setbeamertemplate{footline}
 {
+  \vspace{0.2cm}
   \begin{tikzpicture}[]
     \draw (0,0);
     \draw (0.45,0.21)  node[color=gray, align=left, right=0,inner sep=0,outer sep=0,text height=1.5ex, text depth=0.25ex] {\insertshortdate $\quad$ \insertshorttitle $\quad$ \insertshortauthor $\quad$ \insertshortinstitute};
     \draw (15.55,0.21)  node[color=gray, align=right, left=0,inner sep=0,outer sep=0,text height=1.5ex, text depth=0.25ex] {\insertframenumber};
   \end{tikzpicture}
+}
+
+\AtBeginEnvironment{frame}{\setcounter{footnote}{0}}
+
+\setbeamertemplate{footnote}{
+  \mbox{\insertfootnotemark} \insertfootnotetext
 }
 
 % TODOs 
