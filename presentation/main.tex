@@ -34,7 +34,6 @@
 \begin{frame}
   \frametitle{Making a KTH Presentation}
   % \framesubtitle{Optional Subtitle}
-
   \begin{block}{Steps needed}
     \begin{itemize}
     \item Copy the following files:
@@ -48,7 +47,6 @@
     \item Present your slides using a PDF-viewer \footnote{Supports footnotes}
     \end{itemize}
   \end{block}
-
 \end{frame}
 
 \begin{frame}
@@ -65,9 +63,28 @@
     \item Replace the contents in \texttt{examplepresentation.tex} with your own
     \item Run \texttt{pdflatex} (or \texttt{xelatex} or \texttt{lualatex}) a couple of times
     \item Show references on same slide \footfullcite{palmieri2019dispertio} and automatically at the end
-
   \end{itemize}
+\end{frame}
 
+\begin{frame}
+  \frametitle{Environments}
+  % add \setbeamertemplate{theorems}[numbered] to get numbers to definition and theorem envs
+  \begin{definition}[Test]
+    This is a definition of test.
+  \end{definition}
+  \begin{block}{Test}
+    Test is a block.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Environments}
+  \begin{example}
+    Example environment.
+  \end{example}
+  \begin{alertblock}
+    Alert environment.
+  \end{alertblock}
 \end{frame}
 
 \begin{frame}[allowframebreaks]

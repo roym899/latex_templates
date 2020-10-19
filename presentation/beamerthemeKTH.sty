@@ -109,6 +109,23 @@
 \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
 \addtolength{\leftmargini}{1.8\labelsep}
 
+% environments (definition, theorem)
+% \setbeamertemplate{theorems}[numbered]
+\useinnertheme{rectangles}
+
+% see: https://intra.kth.se/en/administration/kommunikation/grafiskprofil/profilfarger-1.845077
+\definecolor{kthblue}{RGB}{25,84,166}
+\definecolor{kthlightblue}{RGB}{36,160,216}
+\definecolor{kthpink}{RGB}{216,84,151}
+\definecolor{kthgreen}{RGB}{176,201,43}
+\definecolor{kthgray}{RGB}{101,101,108}
+\setbeamercolor{block title}{use=structure,fg=white,bg=kthblue}
+\setbeamercolor{block title alerted}{use=alerted text,fg=white,bg=kthpink}
+\setbeamercolor{block title example}{use=example text,fg=white,bg=kthgreen}
+
+\setbeamercolor{block body}{parent=normal text,use=block title,bg=kthblue!20!white}
+\setbeamercolor{block body alerted}{parent=normal text,use=block title alerted,bg=kthpink!20!white}
+\setbeamercolor{block body example}{parent=normal text,use=block title example,bg=kthgreen!20!white}
 
 % footer
 \setbeamertemplate{footline}
