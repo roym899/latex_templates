@@ -135,6 +135,27 @@
   \end{tikzpicture}
 }
 
+\renewcommand<>\beamer@framefootnotetext[1]{%
+  \global\setbox\beamer@footins\vbox{%
+    \hsize\framewidth
+    \textwidth\hsize
+    \columnwidth\hsize
+    \unvbox\beamer@footins
+    \reset@font\footnotesize
+    \@parboxrestore
+    \protected@edef\@currentlabel
+   {\noindent\csname p@footnote\endcsname\@thefnmark}%
+    \hskip -1.5em    
+    \color@begingroup
+      \uncover#2{\@makefntext{%
+        \rule\z@\footnotesep\ignorespaces\parbox[t]{\textwidth}{#1\@finalstrut\strutbox}\vskip1sp}}%
+    \color@endgroup}%
+}
+
+\renewcommand*\footnoterule{}
+
+\let\oldfootnotesize\footnotesize
+\renewcommand*{\footnotesize}{\oldfootnotesize\tiny}
 \AtBeginEnvironment{frame}{\setcounter{footnote}{0}}
 
 \setbeamertemplate{footnote}{
